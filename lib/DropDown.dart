@@ -24,24 +24,20 @@ class _DropDownState extends State<DropDown> {
       body: 
           Container(
             height: 200,
-            child: Column(
-                       children: [
-                          DropdownButton(
-                                    value: valueChosse,
-                                    onChanged: (newValue){
-                                      setState(() {
-                                        valueChosse = newValue;
-                                      });
-                                    },
-                                    items: listItem.map((valueItem){
-                                      return DropdownMenuItem(
-                                        value: valueItem,
-                                        child: Text(valueItem),
-                                        );
-                                    }).toList()
-                                  ),
-                       ],
-                     ),
+            child: DropdownButton(
+                      value: valueChosse,
+                      onChanged: (newValue){
+                        setState(() {
+                          valueChosse = newValue;
+                        });
+                      },
+                      items: listItem.map((valueItem){
+                        return DropdownMenuItem(
+                          value: valueItem,
+                          child: Text(valueItem),
+                          );
+                      }).toList()
+                    ),
           ),
     );
   }
